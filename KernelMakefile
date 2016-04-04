@@ -27,7 +27,7 @@ TARGET_PROVIDES_INIT_RC := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_RIL_DISABLE_STATUS_POLLING := true
 TARGET_BOARD_KERNEL_HEADERS := $(COMMON_PATH)/kernel-headers
-KERNEL_SRC_DIR ?= kernel/asus/a500cg/kernel
+KERNEL_SRC_DIR ?= kernel/asus/T00F/kernel
 
 TARGET_TOOLS_PREFIX := prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.8/bin/x86_64-linux-android-
 TARGET_CC := prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.8/bin/x86_64-linux-android-gcc
