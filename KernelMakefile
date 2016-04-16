@@ -1,8 +1,7 @@
 TARGET_BOARD_PLATFORM := clovertrail
-TARGET_DEVICE:=hd
+TARGET_DEVICE := hd
 PRODUCT_OUT := out/target/product/asusctp_$(TARGET_DEVICE)
-TARGET_DEVICE_DIR := device/asus/$(TARGET_BOARD_PLATFORM)/asusctp_$(TARGET_DEVICE)
-KERNEL_DIFFCONFIG := $(TARGET_DEVICE_DIR)/asusctp_$(TARGET_DEVICE)_diffconfig
+KERNEL_DIFFCONFIG := kernel/asus/T00F/kernel/arch/x86/configs/cyanogenmod_asusctp_$(TARGET_DEVICE)_defconfig
 
 ifeq ($(BOARD_USE_64BIT_USERSPACE),true)
 TARGET_ARCH := x86_64
@@ -36,9 +35,8 @@ MINIGZIP := out/host/linux-x86/bin/minigzip
 
 $(info KERNEL_DIFFCONFIG ${KERNEL_DIFFCONFIG} )
 
-include device/intel/common/AndroidKernel.mk
+include kernel/asus/T00F/AndroidKernel.mk
 
 openssl: out/host/linux-x86/bin/openssl
 
 build_kernel: $(PRODUCT_OUT)/kernel
-
