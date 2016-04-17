@@ -1,7 +1,7 @@
 TARGET_BOARD_PLATFORM := clovertrail
 TARGET_DEVICE := hd
 PRODUCT_OUT := out/target/product/asusctp_$(TARGET_DEVICE)
-KERNEL_DIFFCONFIG := kernel/asus/T00F/kernel/arch/x86/configs/cyanogenmod_asusctp_$(TARGET_DEVICE)_defconfig
+KERNEL_DIFFCONFIG := kernel/asus/T00F/defconfig
 
 ifeq ($(BOARD_USE_64BIT_USERSPACE),true)
 TARGET_ARCH := x86_64
