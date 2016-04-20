@@ -28,9 +28,9 @@ TARGET_RIL_DISABLE_STATUS_POLLING := true
 TARGET_BOARD_KERNEL_HEADERS := $(COMMON_PATH)/kernel-headers
 KERNEL_SRC_DIR ?= kernel/asus/T00F/kernel
 
-TARGET_TOOLS_PREFIX := prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.8/bin/x86_64-linux-android-
-TARGET_CC := prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.8/bin/x86_64-linux-android-gcc
-PATH := $(shell pwd)/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.8/bin:$(PATH)
+TARGET_TOOLS_PREFIX := prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9/bin/x86_64-linux-android-
+TARGET_CC := prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9/bin/x86_64-linux-android-gcc
+PATH := $(shell pwd)/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9/bin:$(PATH)
 MINIGZIP := out/host/linux-x86/bin/minigzip
 
 $(info KERNEL_DIFFCONFIG ${KERNEL_DIFFCONFIG} )
