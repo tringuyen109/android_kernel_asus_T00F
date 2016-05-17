@@ -98,14 +98,14 @@ $(KERNEL_CONFIG_KDUMP): $(KERNEL_DEFCONFIG) $(wildcard $(COMMON_PATH)/kdump_defc
 	@$(KERNEL_BLD_ENV) $(MAKE) -C $(KERNEL_SRC_DIR) $(KERNEL_BLD_FLAGS_KDUMP) oldconfig
 
 ifeq (,$(filter build_kernel-nodeps,$(MAKECMDGOALS)))
-$(KERNEL_BZIMAGE): openssl $(MINIGZIP)
+$(KERNEL_BZIMAGE): $(MINIGZIP)
 endif
 
 $(KERNEL_BZIMAGE): $(KERNEL_CONFIG)
 	@$(KERNEL_BLD_ENV) $(MAKE) -C $(KERNEL_SRC_DIR) $(KERNEL_BLD_FLAGS)
 	@cp -f $(KERNEL_OUT_DIR)/arch/x86/boot/bzImage $@
 
-build_bzImage_kdump: $(KERNEL_CONFIG_KDUMP) openssl $(MINIGZIP)
+build_bzImage_kdump: $(KERNEL_CONFIG_KDUMP) $(MINIGZIP)
 	@echo Building the kdump bzimage
 	@$(KERNEL_BLD_ENV) $(MAKE) -C $(KERNEL_SRC_DIR) $(KERNEL_BLD_FLAGS_KDUMP)
 	@cp -f $(KERNEL_OUT_DIR_KDUMP)/arch/x86/boot/bzImage $(PRODUCT_OUT)/kdumpbzImage
