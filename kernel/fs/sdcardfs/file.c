@@ -341,7 +341,7 @@ const struct file_operations sdcardfs_main_fops = {
 const struct file_operations sdcardfs_dir_fops = {
 	.llseek		= generic_file_llseek,
 	.read		= generic_read_dir,
-	.iterate	= sdcardfs_readdir,
+	.readdir	= sdcardfs_readdir,
 	.unlocked_ioctl	= sdcardfs_unlocked_ioctl,
 #ifdef CONFIG_COMPAT
 	.compat_ioctl	= sdcardfs_compat_ioctl,
